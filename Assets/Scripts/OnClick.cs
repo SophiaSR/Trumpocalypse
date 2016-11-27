@@ -10,28 +10,15 @@ public class OnClick : MonoBehaviour
     public int score = -2;
     Factory.WorldPower wp;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+   
+    //called when a button is clicked
     public void clicked()
     {
-
+       
         if (wp != null)
         {
-            print("hello");
             GameObject go = EventSystem.current.currentSelectedGameObject;
-
-
-            print("Score: " + score + " wpScore: " + wp.score);
+            //checks to see which button is clicked
             if (go.Equals(GameObject.Find("Enter")))
             {
                 if (GameObject.Find("Feet").GetComponent<Dropdown>().value == 2)
@@ -59,6 +46,8 @@ public class OnClick : MonoBehaviour
             GameObject.Find("Score").GetComponent<Text>().text = "Score: " + score;
 
         }
+
+        //sets "correct" and "wrong" buttons active, sets dropdown and "enter" button inactive
         if (!GameObject.Find("Panel").transform.GetChild(1).gameObject.activeInHierarchy)
         {
             GameObject.Find("Panel").transform.GetChild(1).gameObject.SetActive(true);
@@ -68,9 +57,15 @@ public class OnClick : MonoBehaviour
             GameObject.Find("Panel").transform.GetChild(5).gameObject.SetActive(false);
         }
 
+        //which of the two buttons will be on which side
         bool randomPos = Random.Range(0, 2) == 0;
+
         GameObject.Find("Question").GetComponent<Text>().fontSize = 60;
+
+        //sets wp to the next WorldPower
         wp = Factory.Instance.generateAndRemove();
+
+        //If we are out of World Powers, then end the game
         if (wp == null)
         {
             GameObject.Find("Panel").GetComponent<Image>().sprite = endImage;
@@ -81,16 +76,18 @@ public class OnClick : MonoBehaviour
             GameObject.Find("Panel").transform.GetChild(4).gameObject.SetActive(false);
             GameObject.Find("Panel").transform.GetChild(5).gameObject.SetActive(false);
         }
+
         else
         {
-
-
+            //which question to ask 
             if (!wp.met)
             {
                 GameObject.Find("Correct").transform.GetChild(0).GetComponent<Text>().text = wp.a1R;
                 GameObject.Find("Wrong").transform.GetChild(0).GetComponent<Text>().text = wp.a1W;
                 GameObject.Find("Question").GetComponent<Text>().text = wp.q1;
                 GameObject.Find("Question").GetComponent<Text>().text = wp.leader + " of " + wp.name + " is asking: " + wp.q1;
+
+                //sets dropdown active if North Korea height question
                 if (wp.name.Equals("North Korea"))
                 {
                     GameObject.Find("Wrong").SetActive(false);
@@ -108,7 +105,7 @@ public class OnClick : MonoBehaviour
             }
 
 
-
+            //puts buttons in different positions, if they are active
             if (randomPos && GameObject.Find("Panel").transform.GetChild(1).gameObject.activeInHierarchy)
             {
 
@@ -122,6 +119,7 @@ public class OnClick : MonoBehaviour
                 GameObject.Find("Wrong").transform.localPosition = new Vector3(200, -100, 0);
             }
 
+            //sets background image
             GameObject.Find("Panel").GetComponent<Image>().sprite = wp.image;
 
 

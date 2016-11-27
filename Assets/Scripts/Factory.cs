@@ -3,8 +3,13 @@ using System.Collections;
 
 public class Factory : Singleton<Factory>
 {
+    //list of powers
     public ArrayList powers = new ArrayList();
+
+    //array of background images
     public Sprite[] images = new Sprite[7];
+
+
     public class WorldPower
     {
         public Sprite image;
@@ -40,7 +45,7 @@ public class Factory : Singleton<Factory>
             
         }
 
-
+        //adds score (max score for a World Power is 2
         public int addScore(int possibleScore)
         {
             if(-2 < score && score < 2)
@@ -93,6 +98,7 @@ public class Factory : Singleton<Factory>
 
     }
 
+    //Pulls a random world power form powers and if this is the second time it's been pulled, removes it
     public WorldPower generateAndRemove()
     {
         int randomInt = Random.Range(0, powers.Count);
@@ -118,8 +124,5 @@ public class Factory : Singleton<Factory>
 
     }
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

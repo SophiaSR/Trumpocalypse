@@ -18,6 +18,13 @@ public class OnClick : MonoBehaviour {
 
     public void clicked()
     {
-        GameObject.Find("Correct").transform.GetChild(0).GetComponent<Text>().text = (Factory.Instance.powers[0] as Factory.WorldPower).a1;
+        Factory.WorldPower wp = Factory.Instance.generateAndRemove();
+        if (!wp.met) {
+            GameObject.Find("Correct").transform.GetChild(0).GetComponent<Text>().text = wp.a1;
+        }
+        else
+        {
+            GameObject.Find("Correct").transform.GetChild(0).GetComponent<Text>().text = wp.a2;
+        }
     }
 }

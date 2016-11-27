@@ -67,7 +67,7 @@ public class Factory : Singleton<Factory>
         else
         {
             wp.met = true;
-            powers.Remove(randomInt);
+            powers.Remove(wp);
 
 
         }

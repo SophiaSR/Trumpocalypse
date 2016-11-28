@@ -1,4 +1,4 @@
-Initialize engine version: 5.4.0f1-HTP (34096879b9e0)
+Initialize engine version: 5.4.0f3-HTP (b21dfedb4779)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
@@ -14,7 +14,7 @@ Platform assembly: C:\Users\sophia\Documents\GitHub\Trumpocalypse\Trumpocalypse(
 Loading C:\Users\sophia\Documents\GitHub\Trumpocalypse\Trumpocalypse(Windows)_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\sophia\Documents\GitHub\Trumpocalypse\Trumpocalypse(Windows)_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\sophia\Documents\GitHub\Trumpocalypse\Trumpocalypse(Windows)_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.059 seconds
+- Completed reload, in  0.079 seconds
 Platform assembly: C:\Users\sophia\Documents\GitHub\Trumpocalypse\Trumpocalypse(Windows)_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\sophia\Documents\GitHub\Trumpocalypse\Trumpocalypse(Windows)_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -22,6 +22,6 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.837545 ms
+UnloadTime: 0.769279 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 11a4 -> priority: 1 
+  Thread -> id: 1a90 -> priority: 1 
